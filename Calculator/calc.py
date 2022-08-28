@@ -8,20 +8,20 @@ class Calculator:
     def __init__(self):
         root = Tk()
         root.title('Team Outcomes')
-        root.config(bg='white')
+        root.config(bg='black')
         root.geometry('680x486+100+100')
 
         logoImage = PhotoImage(file='logo.png')
-        logoLabel = Label(root, image=logoImage, bg='dodgerblue3')
+        logoLabel = Label(root, image=logoImage, bg='orange')
         logoLabel.grid(row=0, column=0)
 
         self.entryField = Entry(root, font=('arial', 20, 'bold'),
-                        bg='dodgerblue3', fg='white', bd=10, relief=SUNKEN, width=30)
+                        bg='orange', fg='white', bd=10, relief=SUNKEN, width=30)
         self.entryField.grid(row=0, column=0, columnspan=8)
 
         micImage = PhotoImage(file='microphone.png')
-        micButton = Button(root, image=micImage, bd=0, bg='dodgerblue3',
-                        activebackground='dodgerblue3', command=self.audio)
+        micButton = Button(root, image=micImage, bd=0, bg='orange',
+                        activebackground='orange', command=self.audio)
         micButton.grid(row=0, column=7)
 
         button_text_list = ["C", "CE", "√", "+", "π", "cosθ", "tanθ", "sinθ",
@@ -33,8 +33,8 @@ class Calculator:
         columnvalue = 0
         for i in button_text_list:
 
-            button = Button(root, width=5, height=2, bd=2, relief=SUNKEN, text=i, bg='dodgerblue3', fg='white',
-                            font=('arial', 18, 'bold'), activebackground='dodgerblue3', command=lambda button=i: self.click(button))
+            button = Button(root, width=5, height=2, bd=2, relief=SUNKEN, text=i, bg='orange', fg='white',
+                            font=('arial', 18, 'bold'), activebackground='orange', command=lambda button=i: self.click(button))
             button.grid(row=rowvalue, column=columnvalue, pady=1)
             columnvalue += 1
             if columnvalue > 7:
